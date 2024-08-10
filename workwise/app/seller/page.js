@@ -103,7 +103,7 @@ const Seller = () => {
       //   throw new ZodError(result.error.errors);
       // }
 
-      const url = editingProduct ? `https://ecom-workwise.onrender.com/api/seller/product/${editingProduct.id}` : 'http://localhost:5000/api/seller/product';
+      const url = editingProduct ? `https://ecom-workwise.onrender.com/api/seller/product/${editingProduct.id}` : 'https://ecom-workwise.onrender.com/api/seller/product';
       const method = editingProduct ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
