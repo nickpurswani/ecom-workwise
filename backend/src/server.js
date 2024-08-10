@@ -19,11 +19,16 @@ app.use(xssClean());
 
 // Protect against HPP, should come before any routes
 app.use(hpp());
-// Restrict all routes to only 100 requests per IP address every 1o minutes
+// Enable 'trust proxy'
+app.set('trust proxy', 1); // or the number of proxies your app is behind
+
+// Set up rate limiting
 const limiter = rateLimit({
-  windowMs: 10 * 60 * 1000,    // 10 minutes
-  max: 100                     // 100 requests per IP
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: 'Too many requests from this IP, please try again later.',
 });
+
 app.use(limiter);
 app.use(helmet());
 app.use(cors());
