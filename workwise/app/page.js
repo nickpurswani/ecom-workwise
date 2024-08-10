@@ -42,7 +42,7 @@ const Signup = () => {
     }
 
     try {
-      const res = await fetch('http://localhost:5000/api/auth', {
+      const res = await fetch('https://ecom-workwise.onrender.com/api/auth', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

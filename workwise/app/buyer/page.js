@@ -42,12 +42,12 @@ const Buyer = () => {
     const fetchData = async () => {
       try {
         const [productRes, cartRes] = await Promise.all([
-          fetch('http://localhost:5000/api/buyer/products', {
+          fetch('https://ecom-workwise.onrender.com/api/buyer/products', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
           }),
-          fetch('http://localhost:5000/api/buyer/cart', {
+          fetch('https://ecom-workwise.onrender.com/api/buyer/cart', {
             headers: {
               Authorization: `Bearer ${token}`,
             },
@@ -81,7 +81,7 @@ const Buyer = () => {
 
   const addToCart = async (product) => {
     try {
-      const response = await fetch('http://localhost:5000/api/buyer/cart', {
+      const response = await fetch('https://ecom-workwise.onrender.com/api/buyer/cart', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -117,7 +117,7 @@ const Buyer = () => {
 
   const removeFromCart = async (product) => {
     try {
-      const response = await fetch(`http://localhost:5000/api/buyer/cart`, {
+      const response = await fetch(`https://ecom-workwise.onrender.com/api/buyer/cart`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

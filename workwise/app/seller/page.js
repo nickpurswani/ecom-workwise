@@ -65,7 +65,7 @@ const Seller = () => {
 
     const fetchProducts = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/seller/product', {
+        const response = await fetch('https://ecom-workwise.onrender.com/api/seller/product', {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -103,7 +103,7 @@ const Seller = () => {
       //   throw new ZodError(result.error.errors);
       // }
 
-      const url = editingProduct ? `http://localhost:5000/api/seller/product/${editingProduct.id}` : 'http://localhost:5000/api/seller/product';
+      const url = editingProduct ? `https://ecom-workwise.onrender.com/api/seller/product/${editingProduct.id}` : 'http://localhost:5000/api/seller/product';
       const method = editingProduct ? 'PUT' : 'POST';
 
       const response = await fetch(url, {
@@ -163,7 +163,7 @@ const Seller = () => {
     try {
       const token = localStorage.getItem('jwtToken');
 
-      const response = await fetch(`http://localhost:5000/api/seller/product/${productId}`, {
+      const response = await fetch(`https://ecom-workwise.onrender.com/api/seller/product/${productId}`, {
         method: 'DELETE',
         headers: {
           Authorization: `Bearer ${token}`,

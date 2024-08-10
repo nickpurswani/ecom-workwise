@@ -28,7 +28,9 @@ app.use(limiter);
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
-
+app.get('/',(req,res)=>{
+  res.json('hello world')
+})
 app.use('/api/auth', authRoutes);
 app.use('/api/seller', sellerRoutes);
 app.use('/api/buyer', buyerRoutes);
