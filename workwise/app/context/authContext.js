@@ -24,9 +24,10 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const signIn = (userData) => {
+    console.log(userData)
     setUser(userData);
     setLoading(false);
-    localStorage.setItem('jwtToken', userData);
+    localStorage.setItem('jwtToken', userData.token);
     setError(null);
   };
 

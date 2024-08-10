@@ -57,7 +57,7 @@ const Signup = () => {
       }
 
       const user = await res.json();
-      signIn(user.token);
+      signIn(user);
       const userData = user.user;
 
       if (userData.role === 'seller') {
