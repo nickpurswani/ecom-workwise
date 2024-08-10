@@ -206,7 +206,7 @@ const Seller = () => {
       {fetchError && <p className="text-red-500">{fetchError}</p>}
       {addProductError && <p className="text-red-500">{addProductError}</p>}
       
-      <div className="fixed top-4 right-[80px]">
+      <div className="fixed top-4 right-[140px]">
         <button
           onClick={() => setIsModalOpen(true)}
           className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
