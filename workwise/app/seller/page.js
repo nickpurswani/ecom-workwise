@@ -54,7 +54,7 @@ const Seller = () => {
     category: ''
   });
   const [editingProduct, setEditingProduct] = useState(null);
-  const { error } = useAuth();
+  const { error,signOut } = useAuth();
   const router = useRouter();
 
   useEffect(() => {
@@ -189,13 +189,24 @@ const Seller = () => {
     setIsModalOpen(false);
     setEditingProduct(null); // Clear editing state when modal is closed
   };
-
+  const handleLogout = () => {
+    signOut();
+  };
   return (
     <div className="relative">
+      <div className="fixed top-3 right-4">
+        <button
+          className="middle none center rounded-lg py-3 px-6 font-sans text-xs font-bold uppercase text-pink-500 transition-all hover:bg-pink-500/10 active:bg-pink-500/30 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+          data-ripple-dark="true"
+          onClick={handleLogout}
+        >
+          Logout
+        </button>
+      </div>
       {fetchError && <p className="text-red-500">{fetchError}</p>}
       {addProductError && <p className="text-red-500">{addProductError}</p>}
       
-      <div className="fixed top-4 right-4">
+      <div className="fixed top-4 right-[80px]">
         <button
           onClick={() => setIsModalOpen(true)}
           className="px-4 py-2 font-bold text-white bg-blue-500 rounded hover:bg-blue-700"
