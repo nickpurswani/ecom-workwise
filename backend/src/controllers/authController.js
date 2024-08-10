@@ -27,6 +27,7 @@ const signUp = async (req, res) => {
       
   } });
   } catch (err) {
+    console.log(err)
     res.status(500).json({ message: "user already exist" });
   }
 };
@@ -55,6 +56,7 @@ const login = async (req, res) => {
       
   } });
   } catch (err) {
+    console.log(err)
     res.status(500).json({ message: 'email/password does not match' });
   }
 };
