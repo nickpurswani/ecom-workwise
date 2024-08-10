@@ -86,7 +86,7 @@ const Seller = () => {
     };
 
     fetchProducts();
-  }, []);
+  }, [router]);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
